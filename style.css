@@ -1,0 +1,42 @@
+body{
+    /* Especificações:
+    background-image: url(./Imagens/Imagem\ olimpíadas.jpg);
+    background-position: top center;
+    background-size: 1035px;
+    */
+    
+    background: url(./Imagens/Imagem\ olimpíadas\ desfocada.jpg) top center/1035px;
+}
+
+#titulo {
+    width: 680px;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 180px;
+}
+
+body * {
+    font-family: "Inter", sans-serif;
+    color: black;
+}
+
+#titulo h1 {
+    font-weight: 650;
+    font-size: 32px;
+    line-height: 50px;
+    margin: auto;
+}
+
+#iniciar {
+    width: 97px;
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 75px;
+}
+
+#iniciar a {
+    font-weight: 650;
+    font-size: 32px;
+    line-height: 50px;
+    margin: auto;
+}
