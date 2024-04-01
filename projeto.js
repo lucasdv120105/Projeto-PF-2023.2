@@ -21,13 +21,14 @@ const processarLinhas = (linha) => {
     console.log('Linha processada:', linha);
 };
 
+const arquivo = 'athlete_events.csv'
 // Exemplo de uso das funções
-lerCSV('arquivo.csv', (error, linha) => {
+lerCSV(arquivo, (error, linha) => {
     if (error) {
         console.error('Erro ao ler o arquivo CSV:', error);
     } else if (linha !== null) {
         processarLinhas(linha);
     } else {
-        console.log('Fim do arquivo CSV.');
+        console.log('\n Fim');
     }
 });
