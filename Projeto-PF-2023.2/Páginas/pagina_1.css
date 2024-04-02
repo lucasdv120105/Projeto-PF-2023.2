@@ -1,0 +1,49 @@
+body{
+    background-image: linear-gradient(45deg, red, white);
+    max-height: 570px;
+ 
+    /*degradê: linear-gradient(45deg, white, red);*/
+}
+
+* {
+    height: 100%;
+}
+
+body * {
+    font-family: "Inter", sans-serif;
+    color: black;
+}
+
+#texto_1 {
+    width: 450px;
+    height: auto;
+    /*border: 1px solid black;*/
+    margin: auto;
+    margin-left: 320px;
+    margin-top: 175px;
+    /*background-color: rgba(0, 0, 0, 0.8);*/
+}
+
+#texto_1 h1 {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 50px;
+    margin: auto;
+}
+
+button {
+    width: 49%;
+    height: auto;
+    margin-top: 35px;
+    background-color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+body img {
+    height: auto;
+    margin-top: -1000px;
+    margin-bottom: 110px;
+    margin-left: 1050px;
+}
