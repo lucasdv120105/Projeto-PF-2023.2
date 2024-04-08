@@ -1,12 +1,14 @@
 body{
     background-image: linear-gradient(45deg, red, white);
-    max-height: 570px;
- 
-    /*degradê: linear-gradient(45deg, white, red);*/
+    min-height: 100vh; /* mínimo de altura da tela */
+    margin-top: 14%;
+    margin-right: 7%;
+    margin-left: 10%;
+    padding: 0;
 }
 
 * {
-    height: 100%;
+    box-sizing: border-box;
 }
 
 body * {
@@ -14,36 +16,38 @@ body * {
     color: black;
 }
 
-#texto_3 {
-    width: 450px;
-    height: auto;
-    /*border: 1px solid black;*/
-    margin: auto;
-    margin-left: 320px;
-    margin-top: 175px;
-    /*background-color: rgba(0, 0, 0, 0.8);*/
+#container {
+    display: flex;
+    justify-content: space-between; /* espaçamento entre os elementos */
+    align-items: center; /* alinhamento vertical */
+    padding: 20px; /* espaçamento interno */
 }
 
-#texto_3 h1 {
+#texto_1 {
+    flex: 1; /* ocupa o espaço disponível */
+    max-width: 50%; /* máximo de 50% da largura do contêiner */
+    text-align: center;
+    margin-right: 6%;
+}
+
+#texto_1 h1 {
     font-weight: 600;
-    font-size: 40px;
-    line-height: 50px;
-    margin: auto;
+    font-size: 2rem; /* tamanho de fonte responsivo */
+    line-height: 1.5; /* espaço entre linhas responsivo */
 }
 
 button {
-    width: 49%;
-    height: auto;
-    margin-top: 35px;
-    background-color: white;
+    width: 22%; /* largura total */
+    margin-top: 20px; /* espaçamento superior */
+    padding: 10px;
     border: none;
-    padding: 5px;
     border-radius: 10px;
+    background-color: white;
 }
 
 body img {
-    height: auto;
-    margin-top: -1000px;
-    margin-bottom: 135px;
-    margin-left: 1050px;
+    max-width: 50%; /* máximo de 50% da largura do contêiner */
+    margin-left: 64%;
+    margin-top: -50%;
+    margin-bottom: 5%;
 }
