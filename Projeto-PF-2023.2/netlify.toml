@@ -1,4 +1,4 @@
 [[redirects]]
-from = "/*"
-to = "/pagina_inicial.html"
+from = "/pagina_inicial.html"
+to = "/pagina_1.html"
 status = 200
