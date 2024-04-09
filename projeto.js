@@ -1,34 +1,54 @@
-const fs = require('fs');
-const csv = require('csv-parser');
+//pagina 1
+const contarMedalhasTenisDeMesa = async (tipoMedalha) => {
+    try {
+        const atletasChinesesTenisDeMesa = await lerAtletasChineses('athlete_events.csv');
+        const medalhas = atletasChinesesTenisDeMesa
+            .map(linha => (linha.Medal === tipoMedalha && linha.Sport === 'Table Tennis') ? 1 : 0)
+            .reduce((total, acc) => total + acc, 0);
 
-// Função para ler o arquivo CSV
-const lerCSV = (caminhoArquivo, callback) => {
-    fs.createReadStream(caminhoArquivo)
-        .pipe(csv())
-        .on('data', (linha) => {
-            callback(null, linha);
-        })
-        .on('end', () => {
-            callback(null, null); // Indica o fim do arquivo
-        })
-        .on('error', (error) => {
-            callback(error, null);
-        });
-};
-
-// Função para processar as linhas do CSV
-const processarLinhas = (linha) => {
-    console.log('Linha processada:', linha);
-};
-
-const arquivo = 'athlete_events.csv'
-// Exemplo de uso das funções
-lerCSV(arquivo, (error, linha) => {
-    if (error) {
+    
+        const elementoResultado = document.getElementById('resultado');
+        elementoResultado.textContent = `Quantidade de medalhas de ${tipoMedalha} no tênis de mesa para atletas chineses: ${medalhas}`;
+        
+        return `Quantidade de medalhas de ${tipoMedalha} no tênis de mesa para atletas chineses: ${medalhas}`;
+    } catch (error) {
         console.error('Erro ao ler o arquivo CSV:', error);
-    } else if (linha !== null) {
-        processarLinhas(linha);
-    } else {
-        console.log('\n Fim');
+        return 'Erro ao ler o arquivo CSV.';
     }
-});
+};
+
+//pagina 2
+const contarMedalhasWeightlifting = async (tipoMedalha) => {
+    try {
+        const atletasChinesesWeightlifting = await lerAtletasChineses('athlete_events.csv');
+        const medalhas = atletasChinesesWeightlifting
+            .map(linha => (linha.Medal === tipoMedalha && linha.Sport === 'Weightlifting') ? 1 : 0)
+            .reduce((total, acc) => total + acc, 0);
+
+        const elementoResultado = document.getElementById('resultado');
+        elementoResultado.textContent = `Quantidade de medalhas de ${tipoMedalha} no levantamento de peso para atletas chineses: ${medalhas}`;
+        
+        return `Quantidade de medalhas de ${tipoMedalha} no levantamento de peso para atletas chineses: ${medalhas}`;
+    } catch (error) {
+        console.error('Erro ao ler o arquivo CSV:', error);
+        return 'Erro ao ler o arquivo CSV.';
+    }
+};
+
+//pagina 3
+const contarMedalhasGymnastics = async (tipoMedalha) => {
+    try {
+        const atletasChinesesGymnastics = await lerAtletasChineses('athlete_events.csv');
+        const medalhas = atletasChinesesGymnastics
+            .map(linha => (linha.Medal === tipoMedalha && linha.Sport === 'Gymnastics') ? 1 : 0)
+            .reduce((total, acc) => total + acc, 0);
+
+        const elementoResultado = document.getElementById('resultado');
+        elementoResultado.textContent = `Quantidade de medalhas de ${tipoMedalha} na ginástica para atletas chineses: ${medalhas}`;
+        
+        return `Quantidade de medalhas de ${tipoMedalha} na ginástica para atletas chineses: ${medalhas}`;
+    } catch (error) {
+        console.error('Erro ao ler o arquivo CSV:', error);
+        return 'Erro ao ler o arquivo CSV.';
+    }
+};
