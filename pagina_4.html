@@ -14,18 +14,33 @@
             Número de medalhas na ginástica 
             <br/> <br/>
             Medalha:
-            <select name="medalha">
+            <select name="medalha" id="selectMedalha">
                 <option value=""></option>
-                <option value="gold">ouro</option>
-                <option value="silver">prata</option>
-                <option value="bronze">bronze</option>
+                <option value="gold">Ouro</option>
+                <option value="silver">Prata</option>
+                <option value="bronze">Bronze</option>
             </select>
             <br/> <br/>
+            <div id="resultadoMedalhas"></div> <!-- Elemento para exibir o resultado -->
         </h1>
         <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
-        <button onclick="window.location.href = 'pagina_3.html';">VOLTAR</button>
-        <button onclick="window.location.href = 'pagina_5.html';">CONTINUAR</button>
     </div>
     <img src="./china ginastica.jpg" alt="China na ginástica" width="32%" id="chinaGinastica"/>
+
+    <!-- Referência ao arquivo JavaScript -->
+    <script src="./projeto.js"></script>
+
+    <script>
+        // Função para atualizar a contagem de medalhas quando uma opção é selecionada
+        document.getElementById('selectMedalha').addEventListener('change', async function() {
+            const tipoMedalha = this.value; // Obtém o valor da medalha selecionada
+            if (tipoMedalha) {
+                const resultado = await contarMedalhasGymnastics(tipoMedalha); // Chama a função para contar as medalhas
+                document.getElementById('resultadoMedalhas').textContent = resultado; // Exibe o resultado na página
+            } else {
+                document.getElementById('resultadoMedalhas').textContent = ''; // Limpa o resultado se nenhuma medalha for selecionada
+            }
+        });
+    </script>
 </body>
 </html>
