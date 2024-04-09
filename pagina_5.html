@@ -14,19 +14,29 @@
             Média de idade dos medalhistas no tiro esportivo
             <br/> <br/>
             Medalha:
-            <select name="medalha">
+            <select name="medalha" id="medalhaOpcao">
                 <option value=""></option>
                 <option value="gold">ouro</option>
                 <option value="silver">prata</option>
                 <option value="bronze">bronze</option>
             </select>
             <br/> <br/>
-
+            <div id="resultado"></div> 
         </h1>
         <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
         <button onclick="window.location.href = 'pagina_4.html';">VOLTAR</button>
-        <button onclick="window.location.href = 'index.html';">CONCLUIR</button>
-
+        <button onclick="window.location.href = 'pagina_inicial.html';">CONCLUIR</button>
+        <script src="./projeto.js">
+            document.getElementById('medalhaOpcao').addEventListener('change', async function () {
+                const medalha = this.value
+                if (medalha) {
+                    const resultado = mediaDeIdade(medalha)
+                    document.getElementById('resultado').textContent = resultado
+                } else {
+                    document.getElementById('resultado').textContent = ''
+                }
+            })
+        </script>
     </div>
     <img src="./china tiro esportivo.jpg" alt="China no tiro esportivo" width="32%" id="chinaTiroEsportivo"/>
 </body>
